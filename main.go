@@ -29,14 +29,11 @@ func namer() (int, string) {
 	if err2 != nil {
 		return 0, ""
 	}
-
 	fmt.Println("Let's generate your life?")
-
 	return age, name
 }
 
 // this func will display all jobs and set it randomly.
-// it could be or switch statement or an array
 func jobs() string {
 
 	randee := randomizer()
@@ -63,46 +60,45 @@ func jobs() string {
 	return cur
 }
 
-// this func will make a random number generator
-func randomizer() int {
+// func _empty() this func will  make the situations randomly
+// this func will generate all possible variant of actions
+func possibilities(r int, a int, s string, j string) {
+	if r < 10 && r >= 0 {
+		fmt.Printf("%s is r %d y.o %s of UK", s, a, j)
 
-	s1 := rand.NewSource(time.Now().UnixNano())
-	r1 := rand.New(s1)
+	} else if r < 20 && r >= 10 {
 
-	randee := r1.Intn(100)
-	//fmt.Println(randee)
-	return randee
-}
+		fmt.Printf("%s is r %d y.o %s with 1b subs in YouTube", s, a, j)
 
-// this func will save all possible variant of actions
-func possibilities(a int, b int, s string, j string) {
-	if a < 10 && a >= 0 {
-		fmt.Printf("%s is a %d y.o %s of UK", s, b, j)
+	} else if r < 30 && r >= 20 {
+		fmt.Printf("%s is r %d y.o %s who secretly loves his stepmom", s, a, j)
 
-	} else if a < 20 && a >= 10 {
-		fmt.Printf("%s is a %d y.o %s with 1b subs in YouTube", s, b, j)
+	} else if r < 40 && r >= 30 {
+		fmt.Printf("%s is r %d y.o %s of an average teenager", s, a, j)
 
-	} else if a < 30 && a >= 20 {
-		fmt.Printf("%s is a %d y.o %s who secretly loves his stepmom", s, b, j)
-
-	} else if a < 40 && a >= 30 {
-		fmt.Printf("%s is a %d y.o %s of an average teenager", s, b, j)
-
-	} else if a < 50 && a >= 40 {
-		fmt.Printf("%s is a %d y.o second-time-merried %s ", s, b, j)
+	} else if r < 50 && r >= 40 {
+		fmt.Printf("%s is r %d y.o second-time-merried %s ", s, a, j)
 
 	} else {
-		fmt.Printf("%s is a %d y.o %s famous all over the world", s, b, j)
+		fmt.Printf("%s is r %d y.o %s famous all over the world", s, a, j)
 
 	}
 }
 
 // func _empty() this func will show some extra data
-
 // Here main code where we will apply some actions in the story game
 func main() {
 	age, name := namer()
 	randee := randomizer()
 	job := jobs()
 	possibilities(randee, age, name, job)
+}
+
+// this func will make a random number generator
+func randomizer() int {
+	s1 := rand.NewSource(time.Now().UnixNano())
+	r1 := rand.New(s1)
+
+	randee := r1.Intn(100)
+	return randee
 }
