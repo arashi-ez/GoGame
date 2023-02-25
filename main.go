@@ -34,6 +34,15 @@ func namer() (int, string) {
 	return age, name
 }
 
+// this func will display all jobs and set it randomly.
+// it could be or switch statement or an array
+func jobs() string {
+	var cur int
+	var jobName [10]string
+
+	return cur
+}
+
 // this func will make a random number generator
 func randomizer() int {
 
