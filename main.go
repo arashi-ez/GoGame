@@ -85,6 +85,11 @@ func possibilities(r int, a int, s string, j string) {
 	}
 }
 
+/*
+	func _empty() this func will apply different random numbers for every part of code
+	ex. now if random is 49 all content will use 49 index
+
+*/
 // func _empty() this func will show some extra data
 // Here main code where we will apply some actions in the story game
 func main() {
